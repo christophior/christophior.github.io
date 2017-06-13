@@ -7,22 +7,22 @@
         containers: '100%',
         breakpoints: {
             global: {
-                href: 'css/style.css'
+                href: 'static/css/style.css'
             },
             xlarge: {
                 media: '(max-width: 1680px)',
-                href: 'css/style-xlarge.css'
+                href: 'static/css/style-xlarge.css'
             },
             small: {
                 media: '(max-width: 736px)',
-                href: 'css/style-small.css',
+                href: 'static/css/style-small.css',
                 viewport: {
                     scalable: false
                 }
             },
             xsmall: {
                 media: '(max-width: 480px)',
-                href: 'css/style-xsmall.css'
+                href: 'static/css/style-xsmall.css'
             }
         }
     });
