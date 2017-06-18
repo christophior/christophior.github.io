@@ -19,6 +19,8 @@ const HomePage = () => (
 
 // set metadata
 $('title').text(metaData.title);
-$('meta[name=description]').attr("content", metaData.description);
+$('meta[name="description"]').attr("content", metaData.description);
+$('meta[name="twitter:title"]').attr("content", metaData.title);
+$('meta[name="twitter:description"]').attr("content", metaData.description);
 
 ReactDOM.render(HomePage(), document.getElementById('wrapper'));
