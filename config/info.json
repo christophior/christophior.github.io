@@ -15,6 +15,7 @@
         { "url": "https://play.google.com/store/apps/details?id=christophior.dogecointicker.app", "content": "Dogecoin Ticker" },
         { "url": "http://www.christophior.com/JSONConfigurablePersonalSite/", "content": "JSON Configurable Site" },
         { "url": "http://www.christophior.com/yfitops/", "content": "YFITOPS" },
-        { "url": "http://www.christophior.com/ReactFirebaseAuth/", "content": "React/Firebase Auth App" }
+        { "url": "http://www.christophior.com/ReactFirebaseAuth/", "content": "React/Firebase Auth App" },
+        { "url": "http://www.christophior.com/xrpcli/", "content": "XRP price tracker CLI" }
     ]
 }
