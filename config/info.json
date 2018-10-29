@@ -1,22 +1,56 @@
-{   "metaData": {
-        "title": "christophior.com",
-        "description": "Personal site of Herald Chris Villarreal, University of Texas Alumnus and PayPal Software Engineer from Austin, Texas."
-    },
-    "tagLine": "Hi. I'm Chris Villarreal, a PayPal Software Engineer from Austin, Texas!",
-    "resume": "https://dl.dropboxusercontent.com/u/3848960/Herald%20Chris%20Villarreal%20Resume.pdf",
-    "icons": [
-        { "url": "/resume", "icon": "page" },
-        { "url": "http://github.com/christophior", "icon": "social-github" },
-        { "url": "https://www.linkedin.com/in/christophior", "icon": "social-linkedin" },
-        { "url": "mailto:chrisvillarreal1018@gmail.com", "icon": "mail" },
-        { "url": "http://blog.christophior.com", "icon": "pencil" }
-    ],
-    "links": [
-        { "url": "https://gumroad.com/l/worldcupmactoolbar", "content": "Score! Soccer Mac App" },
-        { "url": "http://www.christophior.com/xrpcli/", "content": "XRP price tracker CLI" },
-        { "url": "https://play.google.com/store/apps/details?id=christophior.dogecointicker.app", "content": "Dogecoin Ticker" },
-        { "url": "http://www.christophior.com/JSONConfigurablePersonalSite/", "content": "JSON Configurable Site" },
-        { "url": "http://www.christophior.com/yfitops/", "content": "YFITOPS" },
-        { "url": "http://www.christophior.com/ReactFirebaseAuth/", "content": "React/Firebase Auth App" }
-    ]
+{
+	"metaData": {
+		"title": "christophior.com",
+		"description": "Personal site of Herald Chris Villarreal, University of Texas Alumnus and PayPal Software Engineer from Austin, Texas."
+	},
+	"tagLine": "Hi. I'm Chris Villarreal, a PayPal Software Engineer from Austin, Texas!",
+	"resume": "https://dl.dropboxusercontent.com/u/3848960/Herald%20Chris%20Villarreal%20Resume.pdf",
+	"icons": [
+		{
+			"url": "/resume",
+			"icon": "page"
+		},
+		{
+			"url": "http://github.com/christophior",
+			"icon": "social-github"
+		},
+		{
+			"url": "https://www.linkedin.com/in/christophior",
+			"icon": "social-linkedin"
+		},
+		{
+			"url": "mailto:chrisvillarreal1018@gmail.com",
+			"icon": "mail"
+		},
+		{
+			"url": "http://blog.christophior.com",
+			"icon": "pencil"
+		}
+	],
+	"links": [
+		{
+			"url": "https://gum.co/scoremacapp",
+			"content": "Score! Soccer Mac App"
+		},
+		{
+			"url": "http://www.christophior.com/xrpcli/",
+			"content": "XRP price tracker CLI"
+		},
+		{
+			"url": "https://play.google.com/store/apps/details?id=christophior.dogecointicker.app",
+			"content": "Dogecoin Ticker"
+		},
+		{
+			"url": "http://www.christophior.com/JSONConfigurablePersonalSite/",
+			"content": "JSON Configurable Site"
+		},
+		{
+			"url": "http://www.christophior.com/yfitops/",
+			"content": "YFITOPS"
+		},
+		{
+			"url": "http://www.christophior.com/ReactFirebaseAuth/",
+			"content": "React/Firebase Auth App"
+		}
+	]
 }
