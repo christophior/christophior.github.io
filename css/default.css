@@ -92,31 +92,32 @@ abbr[data-original-title] {
 	cursor: help;
 	border-bottom: 0; }
 
-.avatar{
-		-moz-border-radius: 50%;
-		-webkit-border-radius: 50%;
-		border-radius: 50%;
-		background: url('../img/avatar.jpg');
-		background-size: cover;
-		position: relative;
-		margin-bottom: 8px;
-		margin-left: auto;
-		margin-right: auto;
-		box-shadow: 0 1px 2px rgba(0,0,0,0.62);
-		border: solid white 2px;
-		width: 200px;
-		height: 200px;
-		margin-bottom: 35px;
+.avatar {
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	background: url('../img/avatar.jpg');
+	background-size: cover;
+	position: relative;
+	margin-bottom: 8px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.62);
+	border: solid white 2px;
+	width: 200px;
+	height: 200px;
+	margin-bottom: 35px;
 }
 
 .icons,
 .icons:hover {
-		color: white;
+	color: white;
+	padding-left: 0;
 }
 
 ul.icons {
-		cursor: default;
-		color: white;
+	cursor: default;
+	color: white;
 }
 
 ul.icons li {
