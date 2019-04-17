@@ -7324,6 +7324,7 @@ p a, .border-link {
 /*video background*/
 #home {
 	background-image: url("../img/background.jpg");
+	background-size: cover;
 	background-color: #333;
 }
 .video-section {
