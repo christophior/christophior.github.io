@@ -7323,7 +7323,8 @@ p a, .border-link {
 
 /*video background*/
 #home {
-		background-image: url("../img/background.jpg");
+	background-image: url("../img/background.jpg");
+	background-color: #333;
 }
 .video-section {
 	overflow: hidden;
