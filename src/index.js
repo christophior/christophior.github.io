@@ -1,8 +1,8 @@
-import React from "react"
-import ReactDOM from "react-dom"
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const App = () => {
-	return <h1>Hello React 17,Webpack 4 & Babel 7!</h1>
-}
+import App from './App';
 
-ReactDOM.render(<App />, document.getElementById("root"))
+import './global.css';
+
+ReactDOM.render(<App />, document.getElementById('root'));
