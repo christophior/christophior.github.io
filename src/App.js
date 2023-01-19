@@ -33,17 +33,17 @@ const projects = [
 	{
 		title: 'Competitive Call of Duty mobile app',
 		image: './assets/cod1.png',
-		url: 'https://codcompetitive.christophior.com/',
+		// url: 'https://codcompetitive.christophior.com/',
 	},
 	{
 		title: 'instashare mac app',
 		image: './assets/instashare.png',
-		url: 'http://instashare.christophior.com/',
+		// url: 'http://instashare.christophior.com/',
 	},
 	{
 		title: 'Score! Soccer mac app',
 		image: './assets/score.png',
-		url: 'https://gum.co/scoremacapp',
+		// url: 'https://gum.co/scoremacapp',
 	},
 	{
 		title: 'XRP price tracker cli',
@@ -129,33 +129,43 @@ const App = () => {
 								{projects.map((p, i) => (
 									<div className="col-sm-6 mb-4">
 										<div className="card">
-											<a
-												href="https://codcompetitive.christophior.com/"
-												target="_blank"
-												rel="noreferrer"
-											>
+											{p.url ? (
+												<a
+													href={p.url}
+													target="_blank"
+													rel="noreferrer"
+												>
+													<img
+														src={p.image}
+														alt={`Work ${i + 1}`}
+														className="card-img-top rounded"
+													/>
+												</a>
+											) : (
 												<img
 													src={p.image}
 													alt={`Work ${i + 1}`}
 													className="card-img-top rounded"
 												/>
-											</a>
+											)}
 											<div className="card-body px-0">
 												<h5>{p.title}</h5>
-												<a
-													href={p.url}
-													target="_blank"
-													rel="noreferrer"
-													className="text-muted d-flex flex-row align-items-center"
-												>
-													view project
-													<em
-														className="ml-1"
-														data-feather="arrow-right"
-														with="16"
-														height="16"
-													></em>
-												</a>
+												{p.url ? (
+													<a
+														href={p.url}
+														target="_blank"
+														rel="noreferrer"
+														className="text-muted d-flex flex-row align-items-center"
+													>
+														view project
+														<em
+															className="ml-1"
+															data-feather="arrow-right"
+															with="16"
+															height="16"
+														></em>
+													</a>
+												) : null}
 											</div>
 										</div>
 									</div>
