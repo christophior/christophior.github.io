@@ -12,8 +12,8 @@
   gtag('js', new Date());
   gtag('config', 'G-V765FG4LQC');
 </script>
-<title>Christophior, an independent software company</title>
-<meta name="description" content="Christophior is an independent software company in Austin, Texas. Apps, tools, and systems — designed, built, and operated in-house.">
+<title>Chris Villarreal — Apps, Tools, and Systems from Austin</title>
+<meta name="description" content="Chris Villarreal makes apps, tools, and systems in Austin, Texas. Designed, built, and operated end to end.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.christophior.com/">
 <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
@@ -23,44 +23,47 @@
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Christophior, an independent software company">
-<meta property="og:description" content="Christophior is an independent software company in Austin, Texas. Apps, tools, and systems — designed, built, and operated in-house.">
+<meta property="og:title" content="Chris Villarreal — Apps, Tools, and Systems from Austin">
+<meta property="og:description" content="Chris Villarreal makes apps, tools, and systems in Austin, Texas. Designed, built, and operated end to end.">
 <meta property="og:url" content="https://www.christophior.com/">
 <meta property="og:image" content="https://www.christophior.com/images/link-preview-og-1200x630-paper.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Christophior, an independent software company">
-<meta name="twitter:description" content="Christophior is an independent software company in Austin, Texas. Apps, tools, and systems — designed, built, and operated in-house.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chris Villarreal — Apps, Tools, and Systems from Austin">
+<meta name="twitter:description" content="Chris Villarreal makes apps, tools, and systems in Austin, Texas. Designed, built, and operated end to end.">
 <meta name="twitter:image" content="https://www.christophior.com/images/link-preview-og-1200x630-paper.png">
 
 <!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Christophior",
+  "@type": "Person",
+  "name": "Chris Villarreal",
   "url": "https://www.christophior.com",
+  "jobTitle": "Software Engineer",
   "description": "Apps, tools, and systems made in Austin, Texas.",
-  "founder": {
-    "@type": "Person",
-    "name": "Chris Villarreal"
-  },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Austin",
     "addressRegion": "TX",
     "addressCountry": "US"
-  }
+  },
+  "sameAs": [
+    "https://github.com/christophior",
+    "https://twitter.com/christophior",
+    "https://www.linkedin.com/in/christophior"
+  ]
 }
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
 <script>
+document.documentElement.classList.add('js');
 try{var t=localStorage.getItem('chr-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}
 </script>
 <style>
@@ -97,23 +100,46 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset
   position:sticky;top:env(safe-area-inset-top,0px);z-index:10;
   background:color-mix(in srgb,var(--paper) 84%,transparent);
   -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
-  transition:background-color .45s ease;
+  border-bottom:1px solid transparent;transition:background-color .45s ease,border-color .35s ease;
 }
+.nav.scrolled{border-bottom-color:var(--line)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
 .mark{font-weight:500;font-size:18px;letter-spacing:-0.015em;display:flex;align-items:center;gap:10px;min-height:44px}
-.mark i{width:10px;height:10px;border-radius:50%;background:var(--ink);display:block;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-.mark:hover i{transform:scale(1.5)}
+.mark i{width:10px;height:10px;border-radius:50%;background:var(--ink);display:block;position:relative;transform:none !important;margin-top:2px}
+.mark i::after{
+  content:"";position:absolute;inset:-6px;border-radius:50%;
+  background:conic-gradient(var(--ink) calc(var(--p,0) * 1turn),transparent 0);
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 1.5px),#000 calc(100% - 1.5px));
+  mask:radial-gradient(farthest-side,transparent calc(100% - 1.5px),#000 calc(100% - 1.5px));
+  opacity:0;transition:opacity .4s ease;
+}
+.nav.scrolled .mark i::after{opacity:1}
 .right{display:flex;align-items:center;gap:30px;font-size:15px}
 .links{display:flex;align-items:center;gap:30px}
 .links a{position:relative;padding:12px 0;color:var(--soft);transition:color .25s ease}
 .links a::after{content:"";position:absolute;left:0;right:0;bottom:9px;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .links a:hover{color:var(--ink)}
 .links a:hover::after{transform:scaleX(1)}
+.links a.on{color:var(--ink)}
+.links a.on::after{transform:scaleX(1)}
 .clock{color:var(--soft);font-variant-numeric:tabular-nums;white-space:nowrap}
+.clock .c{animation:blink 2s steps(1) infinite}
+@keyframes blink{50%{opacity:.25}}
 .theme{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;margin-right:-12px}
 .theme svg{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
 :root[data-theme="dark"] .theme svg{transform:rotate(180deg)}
 .theme:hover svg{opacity:.6}
+.theme:active svg{transform:scale(.86)}
+
+/* view transition for theme */
+.vt *,.vt *::before,.vt *::after{transition:none !important}
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+::view-transition-old(root){z-index:1}
+::view-transition-new(root){z-index:2}
+
+/* inline links */
+.inl{background:linear-gradient(currentColor,currentColor) left bottom / 100% 1px no-repeat;padding-bottom:1px;color:var(--ink);transition:background-size .45s cubic-bezier(.2,.7,.2,1)}
+.inl:hover{background-size:0% 1px;background-position:right bottom}
 
 /* hero */
 .hero{padding:clamp(96px,21vh,230px) 0 clamp(96px,18vh,200px)}
@@ -127,11 +153,29 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset
 .now a{color:var(--ink);border-bottom:1px solid var(--line);transition:border-color .25s ease}
 .now a:hover{border-color:var(--ink)}
 
+/* live ping */
+.now i,.row .state.on::before{animation:ping 2.8s cubic-bezier(.2,.7,.2,1) infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--live) 55%,transparent)}70%,100%{box-shadow:0 0 0 8px transparent}}
+
+/* hero: words rise once */
+.js .hero h1.split{opacity:1;transform:none;animation:none}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}
+.wi{display:inline-block;transform:translateY(112%);animation:up 1s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i) * 32ms + 80ms)}
+@keyframes up{to{transform:none}}
+.js .now{animation-delay:.75s}
+
 /* sections */
 .sec{border-top:1px solid var(--line);padding:72px 0 128px;transition:border-color .45s ease}
 .sec .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
 .sec h2{grid-column:1 / span 3;margin:0;font-size:15px;font-weight:400;color:var(--soft)}
 .sec .body{grid-column:4 / span 9}
+
+/* dividers draw in */
+.js .sec{border-top-color:transparent;position:relative}
+.js .sec::before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:var(--line);transform:scaleX(0);transform-origin:left;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),background-color .45s ease}
+.js .sec.in::before{transform:scaleX(1)}
+.js .sec h2{opacity:0;transition:opacity .8s ease .25s}
+.js .sec.in h2{opacity:1}
 
 /* index rows */
 .row{
@@ -150,11 +194,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset
 .row .state.on{color:var(--ink)}
 .row .state.on::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--live);margin-right:9px;vertical-align:1px}
 .row.quiet .name{color:var(--soft)}
+
+/* rows: arrow affordance */
+a.row .state{position:relative}
+a.row .state::after{content:"\2197";position:absolute;left:100%;top:0;margin-left:7px;opacity:0;transform:translate(-5px,5px);transition:opacity .3s ease,transform .45s cubic-bezier(.2,.7,.2,1)}
 @media (hover:hover){
   .body:has(.row:hover) .row{opacity:.38}
   .body:has(.row:hover) .row:hover{opacity:1}
   a.row:hover .name{transform:translateX(10px)}
+  a.row:hover .state::after{opacity:1;transform:none}
 }
+a.row:active .name{transform:translateX(6px)}
 
 .rows{margin-top:56px}
 .rows .row:first-child{padding-top:26px;border-top:1px solid var(--line)}
@@ -163,13 +213,22 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset
 .lede{margin:0;font-size:clamp(22px,2.3vw,30px);line-height:1.3;letter-spacing:-0.02em;max-width:26em;text-wrap:pretty}
 .small{margin:36px 0 0;color:var(--soft);max-width:36em;text-wrap:pretty}
 .small + .small{margin-top:16px}
+
+/* email copy */
 .mail{
-  display:inline-block;margin-top:40px;
+  display:inline-grid;overflow:hidden;text-align:left;cursor:copy;color:var(--ink);
+  margin-top:40px;
   font-size:clamp(26px,3.4vw,46px);letter-spacing:-0.03em;line-height:1.1;
   background:linear-gradient(var(--ink),var(--ink)) left bottom / 100% 1px no-repeat;padding-bottom:8px;
   transition:background-size .5s cubic-bezier(.2,.7,.2,1);
 }
 .mail:hover{background-size:0% 1px;background-position:right bottom}
+.mail span{grid-area:1/1;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.mail .b{transform:translateY(115%)}
+.mail.copied .a{transform:translateY(-115%)}
+.mail.copied .b{transform:none}
+.mail:active{opacity:.7}
+.hint{margin:18px 0 0;font-size:15px;color:var(--soft)}
 
 /* footer */
 footer{border-top:1px solid var(--line);padding:28px 0 0;font-size:15px;color:var(--soft);transition:border-color .45s ease}
@@ -177,11 +236,19 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
 footer nav{display:flex;gap:28px}
 footer a{padding:12px 0;transition:color .25s ease}
 footer a:hover{color:var(--ink)}
+.kbd{margin-left:18px;opacity:.0;transition:opacity .4s ease}
+footer:hover .kbd{opacity:1}
+kbd{font:inherit;font-size:12px;border:1px solid var(--line);border-radius:5px;padding:1px 6px;margin:0 2px}
+@media (hover:none){.kbd{display:none}}
 .big{
-  margin:56px 0 0;padding:0 28px;color:var(--ink);user-select:none;
-  font-size:18.6vw;font-weight:500;letter-spacing:-0.06em;line-height:.78;white-space:nowrap;
+  margin:56px 0 0;padding:0 28px;color:var(--ink);user-select:none;cursor:default;
+  font-size:17.8vw;font-weight:500;letter-spacing:-0.06em;line-height:.78;white-space:nowrap;
   height:.62em;overflow:hidden;
+  -webkit-mask-image:linear-gradient(to bottom,var(--ink) 50%,transparent 100%);
+  mask-image:linear-gradient(to bottom,var(--ink) 50%,transparent 100%);
 }
+.big .l{display:inline-block;font-weight:500;transition:font-weight .35s ease,transform 1.1s cubic-bezier(.2,.7,.2,1);transition-delay:0s,calc(var(--i) * 35ms)}
+.js .big:not(.in) .l{transform:translateY(60%)}
 
 /* one load moment */
 @media (prefers-reduced-motion:no-preference){
@@ -192,6 +259,10 @@ footer a:hover{color:var(--ink)}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition:none !important}
+  .wi{transform:none;animation:none}
+  .now i,.row .state.on::before,.clock .c{animation:none}
+  .js .sec::before{transform:none}.js .sec h2{opacity:1}
+  .js .big:not(.in) .l{transform:none}
 }
 
 @media (max-width:820px){
@@ -209,12 +280,12 @@ footer a:hover{color:var(--ink)}
 </head>
 <body>
 
-<header class="nav">
+<header class="nav" id="nav">
   <div class="wrap">
     <a class="mark" href="#top"><i></i>Christophior</a>
     <div class="right">
       <nav class="links" aria-label="Main">
-        <a href="#products">Products</a><a class="hide" href="#approach">Approach</a><a class="hide" href="#with-us">Work with us</a><a class="hide" href="#company">Company</a><a href="#contact">Contact</a>
+        <a href="#products">Products</a><a class="hide" href="#approach">Approach</a><a class="hide" href="#with-me">Work with me</a><a class="hide" href="#about">About</a><a href="#contact">Contact</a>
       </nav>
       <span class="clock" id="clock" aria-label="Local time in Austin">Austin</span>
       <button class="theme" id="theme" aria-label="Switch between light and dark theme">
@@ -227,18 +298,18 @@ footer a:hover{color:var(--ink)}
 <main id="top">
 
   <section class="hero"><div class="wrap">
-    <h1>We make software people are proud to use. <span>Apps, tools, and systems made in Austin, Texas.</span></h1>
+    <h1 id="h1">I make software people are proud to use. <span>Apps, tools, and systems made in Austin, Texas.</span></h1>
     <p class="now"><i></i>Latest release: <a href="https://trycordia.com">Cordia</a></p>
   </div></section>
 
   <section class="sec" id="products"><div class="wrap">
     <h2>Products</h2>
     <div class="body">
-      <div class="row cat quiet"><span class="no">CHR-004</span><span class="name">Untitled</span><span class="what">In the works. Announced when it is ready and not before.</span><span class="state">Soon</span></div>
+      <div class="row cat quiet"><span class="no">CHR-004</span><span class="name">Untitled</span><span class="what">In the works. Announced when it is ready and not before.</span><span class="state" data-alt="Not yet">Soon</span></div>
       <a class="row cat" href="https://trycordia.com"><span class="no">CHR-003</span><span class="name">Cordia</span><span class="what">A pregnancy companion for iPhone. Designed, built, and operated in-house.</span><span class="state on">Live</span></a>
       <a class="row cat" href="https://instashare.christophior.com/"><span class="no">CHR-002</span><span class="name">instashare</span><span class="what">A Mac app for publishing photographs straight to Instagram.</span><span class="state">Retired</span></a>
       <a class="row cat" href="https://codcompetitive.christophior.com/"><span class="no">CHR-001</span><span class="name">Competitive Call of Duty</span><span class="what">The unofficial app for the Call of Duty World League. News, matches, and standings, on iOS and Android.</span><span class="state">Retired</span></a>
-      <p class="small">Every product gets its own name, its own site, and our full attention. Christophior is the company underneath.</p>
+      <p class="small">Every product gets its own name, its own site, and my full attention.</p>
     </div>
   </div></section>
 
@@ -246,17 +317,17 @@ footer a:hover{color:var(--ink)}
     <h2>Approach</h2>
     <div class="body">
       <p class="lede">Most problems are not new. The tools finally are.</p>
-      <p class="small">We start with the business, not the technology. Who it is for, what the problem costs them, and what they would pay to have it gone. Then we build the smallest thing that solves it well, and we keep running it.</p>
-      <p class="small">We use AI wherever it earns its place, and nowhere else.</p>
+      <p class="small">I start with the business, not the technology. Who it is for, what the problem costs them, and what they would pay to have it gone. Then I build the smallest thing that solves it well, and I keep running it.</p>
+      <p class="small">I use AI wherever it earns its place, and nowhere else.</p>
     </div>
   </div></section>
 
-  <section class="sec" id="with-us"><div class="wrap">
-    <h2>Work with us</h2>
+  <section class="sec" id="with-me"><div class="wrap">
+    <h2>Work with me</h2>
     <div class="body">
-      <p class="lede">A few times a year we take on a problem outside our own products, when it is interesting and the fit is obvious.</p>
+      <p class="lede">A few times a year I take on a problem outside my own products, when it is interesting and the fit is obvious.</p>
       <div class="rows">
-        <div class="row"><span class="name">Products</span><span class="what">An app or platform, from the first sketch to launch and the months after. Built to the standard of our own.</span><span class="state">Months</span></div>
+        <div class="row"><span class="name">Products</span><span class="what">An app or platform, from the first sketch to launch and the months after. Built to the standard of my own.</span><span class="state">Months</span></div>
         <div class="row"><span class="name">Tools and systems</span><span class="what">The internal tool, automation, or script that removes a problem your team has quietly learned to live with.</span><span class="state">Weeks</span></div>
         <div class="row"><span class="name">Direction</span><span class="what">A clear plan before anything gets built. What to make, who it is for, what it is worth, and what to leave out.</span><span class="state">Days</span></div>
       </div>
@@ -264,19 +335,19 @@ footer a:hover{color:var(--ink)}
     </div>
   </div></section>
 
-  <section class="sec" id="company"><div class="wrap">
-    <h2>Company</h2>
+  <section class="sec" id="about"><div class="wrap">
+    <h2>About</h2>
     <div class="body">
-      <p class="lede">Christophior is an independent software company in Austin, Texas. We build products, run them, and keep the ones that earn their place.</p>
-      <p class="small">Founded by <a href="/founder" style="border-bottom:1px solid var(--line);transition:border-color .25s ease">Chris Villarreal</a>, an engineer with over a decade in payments and commerce at PayPal and Dosh.</p>
+      <p class="lede">I'm Chris Villarreal. Over a decade in payments and commerce at PayPal and Dosh, now building my own products in Austin, Texas under the name Christophior.</p>
     </div>
   </div></section>
 
   <section class="sec" id="contact"><div class="wrap">
     <h2>Contact</h2>
     <div class="body">
-      <p class="lede">Have a problem worth solving properly, or something to say about one of our products? Write to us. If we are not the right people for it, we will say so.</p>
-      <a class="mail" href="mailto:hello@christophior.com">hello@christophior.com</a>
+      <p class="lede">Have a problem worth solving, or something to say about one of my products? Write to me. If I'm not the right person for it, I'll say so.</p>
+      <button class="mail" id="mail" type="button" aria-label="Copy email address hello@christophior.com"><span class="a">hello@christophior.com</span><span class="b" aria-hidden="true">Copied. Talk soon.</span></button>
+      <p class="hint">Click to copy, or <a class="inl" href="mailto:hello@christophior.com">open your mail app</a>.</p>
     </div>
   </div></section>
 
@@ -284,36 +355,153 @@ footer a:hover{color:var(--ink)}
 
 <footer>
   <div class="wrap">
-    <span>&copy; 2026 Christophior LLC, Austin, Texas</span>
+    <span>&copy; 2026 Chris Villarreal, Austin, Texas <span class="kbd">Press <kbd>T</kbd> to switch theme</span></span>
     <nav aria-label="Elsewhere">
       <a href="https://github.com/christophior">GitHub</a>
       <a href="https://twitter.com/christophior">X</a>
-      <a href="#top">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/christophior">LinkedIn</a>
     </nav>
   </div>
-  <div class="big" aria-hidden="true">Christophior</div>
+  <div class="big" id="big" aria-hidden="true">Christophior</div>
 </footer>
-
 <script>
 (function(){
-  var root=document.documentElement;
+  var root=document.documentElement, body=document.body;
+  var reduced=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   function set(k,v){try{localStorage.setItem(k,v);}catch(e){}}
 
-  // clock
-  var el=document.getElementById('clock');
+  /* clock with a breathing colon */
+  var clock=document.getElementById('clock');
   function tick(){
-    try{el.textContent='Austin '+new Intl.DateTimeFormat('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/Chicago'}).format(new Date());}
-    catch(e){el.textContent='Austin';}
+    try{
+      var t=new Intl.DateTimeFormat('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/Chicago'}).format(new Date());
+      clock.innerHTML='Austin '+t.replace(':','<span class="c">:</span>');
+    }catch(e){clock.textContent='Austin';}
   }
-  tick();setInterval(tick,20000);
+  tick();setInterval(tick,15000);
 
-  // theme
-  document.getElementById('theme').addEventListener('click',function(){
-    var cur=root.getAttribute('data-theme')||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
-    var next=cur==='dark'?'light':'dark';
-    root.setAttribute('data-theme',next);set('chr-theme',next);
+  /* theme: circular reveal from the toggle */
+  var tbtn=document.getElementById('theme');
+  function current(){return root.getAttribute('data-theme')||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}
+  function flip(){
+    var next=current()==='dark'?'light':'dark';
+    function apply(){root.setAttribute('data-theme',next);set('chr-theme',next);}
+    if(!document.startViewTransition||reduced){apply();return;}
+    var r=tbtn.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2;
+    var end=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
+    root.classList.add('vt');
+    var vt=document.startViewTransition(apply);
+    vt.ready.then(function(){
+      root.animate({clipPath:['circle(0px at '+x+'px '+y+'px)','circle('+end+'px at '+x+'px '+y+'px)']},
+        {duration:700,easing:'cubic-bezier(.3,.7,.2,1)',pseudoElement:'::view-transition-new(root)'});
+    });
+    vt.finished.then(function(){root.classList.remove('vt');},function(){root.classList.remove('vt');});
+  }
+  tbtn.addEventListener('click',flip);
+  document.addEventListener('keydown',function(e){
+    if(e.metaKey||e.ctrlKey||e.altKey)return;
+    var tag=(e.target.tagName||'').toLowerCase();
+    if(tag==='input'||tag==='textarea'||e.target.isContentEditable)return;
+    if(e.key==='t'||e.key==='T')flip();
   });
 
+  /* hero: split into words, rise once */
+  var h1=document.getElementById('h1');
+  if(h1&&!reduced){
+    var i=0;
+    (function split(node){
+      Array.prototype.slice.call(node.childNodes).forEach(function(n){
+        if(n.nodeType===3){
+          var frag=document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(function(part){
+            if(!part)return;
+            if(/^\s+$/.test(part)){frag.appendChild(document.createTextNode(' '));return;}
+            var w=document.createElement('span');w.className='w';
+            var wi=document.createElement('span');wi.className='wi';wi.style.setProperty('--i',i++);wi.textContent=part;
+            w.appendChild(wi);frag.appendChild(w);
+          });
+          node.replaceChild(frag,n);
+        }else if(n.nodeType===1){split(n);}
+      });
+    })(h1);
+    h1.classList.add('split');
+  }
+
+  /* nav: hairline, progress ring, active section */
+  var nav=document.getElementById('nav'),ticking=false;
+  function onScroll(){
+    if(ticking)return;ticking=true;
+    requestAnimationFrame(function(){
+      var max=root.scrollHeight-innerHeight;
+      nav.classList.toggle('scrolled',scrollY>8);
+      nav.style.setProperty('--p',max>0?Math.min(1,scrollY/max):0);
+      ticking=false;
+    });
+  }
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var links={};
+  document.querySelectorAll('.links a[href^="#"]').forEach(function(a){links[a.getAttribute('href').slice(1)]=a;});
+  if('IntersectionObserver' in window){
+    var spy=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting)return;
+        Object.keys(links).forEach(function(k){links[k].classList.toggle('on',k===e.target.id);});
+      });
+    },{rootMargin:'-40% 0px -55% 0px'});
+    var seen=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');seen.unobserve(e.target);}});
+    },{rootMargin:'0px 0px -12% 0px'});
+    document.querySelectorAll('.sec').forEach(function(sec){spy.observe(sec);seen.observe(sec);});
+    var big=document.getElementById('big');if(big)seen.observe(big);
+  }else{
+    document.querySelectorAll('.sec,.big').forEach(function(el){el.classList.add('in');});
+  }
+
+  /* "Soon" has a second answer */
+  document.querySelectorAll('.state[data-alt]').forEach(function(el){
+    var a=el.textContent,b=el.getAttribute('data-alt'),row=el.closest('.row');
+    row.addEventListener('mouseenter',function(){el.textContent=b;});
+    row.addEventListener('mouseleave',function(){el.textContent=a;});
+  });
+
+  /* email: click to copy */
+  var mail=document.getElementById('mail'),addr='hello@christophior.com',timer;
+  function done(){mail.classList.add('copied');clearTimeout(timer);timer=setTimeout(function(){mail.classList.remove('copied');},1900);}
+  function legacy(){
+    try{var ta=document.createElement('textarea');ta.value=addr;ta.style.position='fixed';ta.style.opacity='0';body.appendChild(ta);ta.select();var ok=document.execCommand('copy');body.removeChild(ta);return ok;}catch(e){return false;}
+  }
+  mail.addEventListener('click',function(){
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(addr).then(done,function(){if(legacy())done();else location.href='mailto:'+addr;});
+    }else if(legacy())done();else location.href='mailto:'+addr;
+  });
+
+  /* footer wordmark: letters gain weight near the cursor */
+  var bigEl=document.getElementById('big');
+  if(bigEl){
+    var txt=bigEl.textContent;bigEl.textContent='';
+    var letters=txt.split('').map(function(ch,n){
+      var sp=document.createElement('span');sp.className='l';sp.textContent=ch;sp.style.setProperty('--i',n);bigEl.appendChild(sp);return sp;
+    });
+    if(!reduced){
+      var raf=null;
+      function weigh(x){
+        letters.forEach(function(l){
+          var r=l.getBoundingClientRect(),d=Math.abs(x-(r.left+r.width/2)),f=Math.max(0,1-d/(innerWidth*.22));
+          l.style.fontWeight=Math.round(500+200*f*f);
+        });
+      }
+      function move(x){if(raf)cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){weigh(x);});}
+      bigEl.addEventListener('mousemove',function(e){move(e.clientX);});
+      bigEl.addEventListener('touchmove',function(e){if(e.touches[0])move(e.touches[0].clientX);},{passive:true});
+      function rest(){letters.forEach(function(l){l.style.fontWeight='';});}
+      bigEl.addEventListener('mouseleave',rest);bigEl.addEventListener('touchend',rest);
+    }
+  }
+
+  /* for the curious */
+  try{console.log('%c\u25CF Christophior','font:500 18px sans-serif','\nApps, tools, and systems. Made in Austin, Texas.\nhello@christophior.com');}catch(e){}
 })();
 </script>
 </body>
