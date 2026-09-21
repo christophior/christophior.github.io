@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Christophior brand assets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<script>
+try{var t=localStorage.getItem('chr-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}
+</script>
+<style>
+:root{
+  --paper:#FAF8F3;--white:#FFFFFF;--ink:#000000;--soft:#6B675F;--line:#E5E1D7;--bench:#F1EEE6;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#0D0D0C;--white:#181817;--ink:#F5F2EA;--soft:#A19C91;--line:#2A2926;--bench:#161615}
+}
+:root[data-theme="dark"]{--paper:#0D0D0C;--white:#181817;--ink:#F5F2EA;--soft:#A19C91;--line:#2A2926;--bench:#161615}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 88px);-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:'Instrument Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;
+  transition:background-color .45s ease,color .45s ease;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:4px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--paper) 84%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.mark{font-weight:500;font-size:18px;letter-spacing:-0.015em;display:flex;align-items:center;gap:10px;min-height:44px}
+.mark i{width:10px;height:10px;border-radius:50%;background:var(--ink);display:block}
+.mark span{color:var(--soft);font-weight:400}
+.theme{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;margin-right:-12px}
+.theme svg{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+:root[data-theme="dark"] .theme svg{transform:rotate(180deg)}
+
+.hero{padding:clamp(64px,12vh,130px) 0 clamp(56px,9vh,100px)}
+.hero h1{margin:0;max-width:18em;font-weight:400;font-size:clamp(30px,4.2vw,54px);line-height:1.1;letter-spacing:-0.035em;text-wrap:balance}
+.hero h1 span{color:var(--soft)}
+.controls{margin-top:44px;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;font-size:15px;color:var(--soft)}
+.seg{display:inline-flex;padding:3px;border:1px solid var(--line);border-radius:999px}
+.seg button{height:38px;padding:0 18px;border-radius:999px;color:var(--soft);transition:background-color .25s ease,color .25s ease}
+[data-l2],[data-tone]{}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.seg.wrapy{flex-wrap:wrap;border-radius:24px}
+.check{display:inline-flex;align-items:center;gap:10px;min-height:44px;cursor:pointer}
+.check input{width:18px;height:18px;accent-color:var(--ink);margin:0}
+
+.sec{border-top:1px solid var(--line);padding:56px 0 96px}
+.sec .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+.sec .meta{grid-column:1 / span 3}
+.sec h2{margin:0;font-size:22px;font-weight:400;letter-spacing:-0.02em}
+.sec .meta p{margin:10px 0 0;font-size:15px;color:var(--soft);max-width:22em}
+.sec .meta p.dim{font-variant-numeric:tabular-nums}
+.sec .body{grid-column:4 / span 9}
+.bench{background:var(--bench);border-radius:14px;padding:clamp(18px,3vw,40px);transition:background-color .45s ease}
+.bench + .bench{margin-top:20px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.cap{margin:14px 0 0;font-size:14px;color:var(--soft)}
+
+/* ---------- assets ---------- */
+.assets{--a-bg:#FAF8F3;--a-fg:#000000;--a-soft:#6B675F}
+.assets[data-tone="ink"]{--a-bg:#0D0D0C;--a-fg:#F5F2EA;--a-soft:#A19C91}
+.asset,.asset *{transition:background-color .45s ease,color .45s ease}
+.asset{
+  container-type:inline-size;position:relative;overflow:hidden;width:100%;
+  background:var(--a-bg);color:var(--a-fg);
+  box-shadow:0 0 0 1px rgba(128,128,128,.22),0 18px 40px -18px rgba(0,0,0,.25);
+  letter-spacing:-0.02em;line-height:1.2;
+}
+.asset.paper{--a-bg:#FAF8F3;--a-fg:#000000;--a-soft:#6B675F}
+.asset.ink{--a-bg:#0D0D0C;--a-fg:#F5F2EA;--a-soft:#A19C91}
+.dot{display:block;border-radius:50%;background:var(--a-fg);flex:none}
+.soft{color:var(--a-soft)}
+
+/* OG 1200x630 */
+.og{aspect-ratio:1200/630}
+.og .top{position:absolute;left:5cqw;right:5cqw;top:4.6cqw;display:flex;justify-content:space-between;align-items:center;font-size:1.9cqw}
+.og .id{display:flex;align-items:center;gap:1cqw;font-weight:500}
+.og .id .dot{width:1.05cqw;height:1.05cqw}
+.og .line{position:absolute;left:5cqw;top:12.5cqw;max-width:46cqw;font-size:3.3cqw;letter-spacing:-0.03em;line-height:1.12}
+.og .line{white-space:pre-line}
+.l2:empty{display:none}
+.og .big{position:absolute;left:2.2cqw;bottom:0;font-size:18.9cqw;font-weight:500;letter-spacing:-0.06em;line-height:.78;height:.62em;overflow:hidden;white-space:nowrap}
+
+/* headers */
+.xh{aspect-ratio:1500/500}
+.lip{aspect-ratio:1584/396}
+.lic{aspect-ratio:1128/191}
+.hd{position:absolute;top:50%;right:6cqw;transform:translateY(-50%);display:flex;align-items:center;gap:2.4cqw;font-size:1.55cqw}
+.hd .id{display:flex;align-items:center;gap:.8cqw;font-weight:500;font-size:1.75cqw}
+.hd .id .dot{width:.85cqw;height:.85cqw}
+.lic .hd{right:auto;left:50%;transform:translate(-50%,-50%);font-size:1.7cqw}
+.lic .hd .id{font-size:1.9cqw}
+.ghost{position:absolute;border:1px dashed rgba(128,128,128,.7);border-radius:50%;pointer-events:none;transition:opacity .3s ease}
+.xh .ghost{width:13.4cqw;height:13.4cqw;left:4cqw;bottom:-6.7cqw}
+.lip .ghost{width:10.2cqw;height:10.2cqw;left:2.2cqw;bottom:-3.6cqw}
+.lic .ghost{width:11cqw;height:11cqw;left:2.4cqw;bottom:-6.5cqw;border-radius:6%}
+body.noguides .ghost{opacity:0}
+
+/* avatar */
+.av{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
+.av .dot{width:34cqw;height:34cqw}
+.av.round{border-radius:50%}
+
+/* favicon */
+.fav{display:flex;align-items:flex-end;gap:28px;flex-wrap:wrap}
+.fav figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:13px;color:var(--soft)}
+.fav .tile{display:flex;align-items:center;justify-content:center;border-radius:22%;background:var(--a-bg);box-shadow:0 0 0 1px rgba(128,128,128,.22)}
+.fav .tile i{display:block;border-radius:50%;background:var(--a-fg);width:46%;height:46%}
+
+/* business card 3.5 x 2 in */
+.card{aspect-ratio:3.5/2;border-radius:1.2cqw}
+.card .id{position:absolute;left:7cqw;top:7cqw;display:flex;align-items:center;gap:1.6cqw;font-weight:500;font-size:4cqw}
+.card .id .dot{width:2.1cqw;height:2.1cqw}
+.card .who{position:absolute;left:7cqw;bottom:7cqw;font-size:3.1cqw;line-height:1.4}
+.card .how{position:absolute;right:7cqw;bottom:7cqw;font-size:3.1cqw;line-height:1.4;text-align:right}
+.card.back{display:flex;align-items:center;justify-content:center}
+.card.back .dot{width:5.4cqw;height:5.4cqw}
+
+/* signature */
+.sig{background:var(--white);color:var(--ink);border-radius:10px;padding:28px 32px;font-size:15px;line-height:1.5;box-shadow:0 0 0 1px var(--line)}
+.sig b{font-weight:500;display:flex;align-items:center;gap:8px}
+.sig b i{width:8px;height:8px;border-radius:50%;background:var(--ink);display:block}
+.sig span{color:var(--soft)}
+
+/* rules list */
+.rules{margin:0;padding:0;list-style:none}
+.rules li{padding:18px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:24px}
+.rules li:first-child{padding-top:0}
+.rules span{color:var(--soft)}
+
+footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:15px;color:var(--soft)}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none !important}html{scroll-behavior:auto}}
+@media (max-width:820px){
+  .wrap{padding:0 22px}
+  .sec{padding:44px 0 72px}
+  .sec .wrap{display:block}
+  .sec .meta{margin-bottom:28px}
+  .two{grid-template-columns:1fr}
+  .four{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rules li{grid-template-columns:1fr;gap:4px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top"><i></i>Christophior <span>Brand assets</span></a>
+    <button class="theme" id="theme" aria-label="Switch page between light and dark theme">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M9 1a8 8 0 0 1 0 16z" fill="currentColor"></path></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top" class="assets" data-tone="paper">
+
+  <section class="hero"><div class="wrap">
+    <h1>One dot, one word, a lot of space. <span>The loud wordmark is saved for link previews. Everything else stays quiet.</span></h1>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Asset tone">
+        <button data-tone="paper" aria-pressed="true">Paper</button>
+        <button data-tone="ink" aria-pressed="false">Ink</button>
+      </div>
+      <div class="seg wrapy" role="group" aria-label="Second line">
+        <button data-l2="made" aria-pressed="true">Made in Austin</button>
+        <button data-l2="from" aria-pressed="false">From Austin</button>
+        <button data-l2="plain" aria-pressed="false">Austin, plain</button>
+        <button data-l2="what" aria-pressed="false">No place</button>
+        <button data-l2="none" aria-pressed="false">Mark only</button>
+      </div>
+      <label class="check"><input type="checkbox" id="guides" checked> Show where the profile photo overlaps</label>
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="meta">
+      <h2>Link preview</h2>
+      <p class="dim">1200 × 630 px</p>
+      <p>The og:image. What shows when christophior.com is pasted into iMessage, Slack, X, or LinkedIn. The one place the cropped wordmark appears.</p>
+    </div>
+    <div class="body">
+      <div class="bench">
+        <div class="asset og">
+          <div class="top"><span class="id"><i class="dot"></i>Christophior</span><span class="soft">christophior.com</span></div>
+          <div class="line l2"></div>
+          <div class="big" aria-hidden="true">Christophior</div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="meta">
+      <h2>X header</h2>
+      <p class="dim">1500 × 500 px</p>
+      <p>Almost empty on purpose. Just the mark, right of center, so the profile photo and mobile cropping never touch it.</p>
+    </div>
+    <div class="body">
+      <div class="bench">
+        <div class="asset xh">
+          <div class="hd"><span class="id"><i class="dot"></i>Christophior</span><span class="soft l2"></span></div>
+          <i class="ghost"></i>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="meta">
+      <h2>LinkedIn</h2>
+      <p class="dim">Profile 1584 × 396 px<br>Company page 1128 × 191 px</p>
+      <p>Same layout as X for your personal profile. The company page cover is a thin strip, so the mark is centered.</p>
+    </div>
+    <div class="body">
+      <div class="bench">
+        <div class="asset lip">
+          <div class="hd"><span class="id"><i class="dot"></i>Christophior</span><span class="soft l2"></span></div>
+          <i class="ghost"></i>
+        </div>
+        <p class="cap">Personal profile banner</p>
+      </div>
+      <div class="bench">
+        <div class="asset lic">
+          <div class="hd"><span class="id"><i class="dot"></i>Christophior</span><span class="soft l2"></span></div>
+          <i class="ghost"></i>
+        </div>
+        <p class="cap">Company page cover</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="meta">
+      <h2>Profile photo</h2>
+      <p class="dim">400 × 400 px minimum, export at 1000</p>
+      <p>The dot alone, for the company accounts. It survives circle crops and reads at any size. Your personal accounts keep a photo of you.</p>
+    </div>
+    <div class="body">
+      <div class="bench">
+        <div class="four">
+          <div class="asset av paper"><i class="dot"></i></div>
+          <div class="asset av paper round"><i class="dot"></i></div>
+          <div class="asset av ink"><i class="dot"></i></div>
+          <div class="asset av ink round"><i class="dot"></i></div>
+        </div>
+        <p class="cap">Square source and circle crop, on paper and on ink</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="meta">
+      <h2>Favicon</h2>
+      <p class="dim">SVG, plus 32 and 180 px PNG</p>
+      <p>The same dot. Ship it as an SVG that flips with the browser's light or dark mode.</p>
+    </div>
+    <div class="body">
+      <div class="bench">
+        <div class="fav">
+          <figure><div class="tile" style="width:96px;height:96px"><i></i></div>180 touch icon</figure>
+          <figure><div class="tile" style="width:48px;height:48px"><i></i></div>48</figure>
+          <figure><div class="tile" style="width:32px;height:32px"><i></i></div>32</figure>
+          <figure><div class="tile" style="width:16px;height:16px"><i></i></div>16</figure>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="meta">
+      <h2>Business card</h2>
+      <p class="dim">3.5 × 2 in, 1050 × 600 px at 300 dpi, plus 0.125 in bleed</p>
+      <p>Paper front, ink back. Ask the printer for a heavy uncoated cotton stock, 32 pt if they have it. The weight does the talking.</p>
+    </div>
+    <div class="body">
+      <div class="bench">
+        <div class="two">
+          <div>
+            <div class="asset card paper">
+              <div class="id"><i class="dot"></i>Christophior</div>
+              <div class="who">Chris Villarreal<br><span class="soft">Founder</span></div>
+              <div class="how">hello@christophior.com<br><span class="soft">christophior.com</span></div>
+            </div>
+            <p class="cap">Front</p>
+          </div>
+          <div>
+            <div class="asset card back ink"><i class="dot"></i></div>
+            <p class="cap">Back</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="meta">
+      <h2>Email signature</h2>
+      <p>Plain text with one dot. No logo image, no colors, no quote.</p>
+    </div>
+    <div class="body">
+      <div class="bench">
+        <div class="sig">
+          <b><i></i>Chris Villarreal</b>
+          <span>Founder, Christophior</span><br>
+          <span>christophior.com</span>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="meta">
+      <h2>Rules</h2>
+      <p>Short enough to remember.</p>
+    </div>
+    <div class="body">
+      <ul class="rules">
+        <li>Two colors<span>Paper #FAF8F3 and black #000000. Reversed: ink #0D0D0C and cream #F5F2EA. Grey #6B675F for secondary text only.</span></li>
+        <li>One typeface<span>Instrument Sans, regular and medium. Tight tracking on anything large.</span></li>
+        <li>The mark<span>A dot, then the word. The dot is the height of the lowercase letters and never changes color independently of the text.</span></li>
+        <li>Space<span>When in doubt, make the mark smaller and the margin larger. At least 80 percent of any header stays empty.</span></li>
+        <li>The big wordmark<span>Cropped at the baseline, edge to edge. Used only on the site footer and the link preview.</span></li>
+      </ul>
+    </div>
+  </div></section>
+
+</main>
+
+<footer><div class="wrap">Working sheet for christophior.com. Sizes are the platforms' current recommendations, so confirm them before final export.</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  function set(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  function get(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+
+  document.getElementById('theme').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme')||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);set('chr-theme',next);
+  });
+
+  var main=document.getElementById('top');
+  var btns=document.querySelectorAll('.seg button[data-tone]');
+  function tone(v){
+    main.setAttribute('data-tone',v);
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-tone')===v?'true':'false');});
+    set('chr-tone',v);
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){tone(b.getAttribute('data-tone'));});});
+  var saved=get('chr-tone');if(saved==='paper'||saved==='ink')tone(saved);
+
+  var L2={made:'Apps, tools, and systems.\nMade in Austin, Texas.',from:'Apps, tools, and systems\nfrom Austin, Texas.',plain:'Apps, tools, and systems.\nAustin, Texas.',what:'Apps, tools, and systems.',none:''};
+  var lb=document.querySelectorAll('.seg button[data-l2]');
+  function line(v){
+    document.querySelectorAll('.l2').forEach(function(el){el.textContent=L2[v];});
+    lb.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-l2')===v?'true':'false');});
+    set('chr-l2b',v);
+  }
+  lb.forEach(function(b){b.addEventListener('click',function(){line(b.getAttribute('data-l2'));});});
+  var sl=get('chr-l2b');line(L2.hasOwnProperty(sl)?sl:'made');
+
+  document.getElementById('guides').addEventListener('change',function(e){
+    document.body.classList.toggle('noguides',!e.target.checked);
+  });
+})();
+</script>
+</body>
+</html>
