@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /founder/
+Disallow: /christophior-studio.html
+Disallow: /christophior-brand-assets.html
+
+Sitemap: https://www.christophior.com/sitemap.xml
