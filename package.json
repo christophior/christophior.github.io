@@ -4,7 +4,7 @@
 	"description": "Christophior — an independent software company",
 	"author": "Chris Villarreal",
 	"scripts": {
-		"build": "rm -rf dist && mkdir -p dist && cp index.html dist/ && cp -R static/* dist/",
+		"build": "rm -rf dist && mkdir -p dist && cp index.html sitemap.xml robots.txt dist/ && cp -R static/* dist/",
 		"predeploy": "npm run build",
 		"deploy": "gh-pages -d dist"
 	},
