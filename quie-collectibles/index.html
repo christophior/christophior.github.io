@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quie Collectibles · Redesign prototype</title>
+<meta name="description" content="Interactive prototype of the Quie Collectibles storefront redesign.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#141414">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Unbounded:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Noto+Sans+KR:wght@700&family=Noto+Sans+SC:wght@700&display=swap&text=%E6%97%A5%E6%9C%AC%E8%AA%9E%ED%95%9C%EA%B5%AD%EC%96%B4%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="announce"><div class="wrap">
+	<span class="d-only">Free US shipping on orders over $100</span><span class="d-only" aria-hidden="true">·</span><span class="d-only">Ships from Plano, TX in 1–2 business days</span><span class="d-only" aria-hidden="true">·</span><span class="d-only">Duties calculated at checkout in 33 countries</span>
+	<span class="m-only">Free US shipping over $100 · Ships in 1–2 days</span>
+</div></div>
+
+<header class="hdr" id="hdr"></header>
+<div class="scrim" id="scrim"></div>
+
+<main id="app" tabindex="-1"></main>
+<footer id="foot"></footer>
+
+<div class="sheet-scrim" id="sheetScrim"></div>
+<aside class="sheet sheet--right" id="cart" role="dialog" aria-modal="true" aria-labelledby="cartTitle"></aside>
+<aside class="sheet sheet--left" id="mmenu" role="dialog" aria-modal="true" aria-label="Menu"></aside>
+<div class="modal" id="modal" hidden></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="proto d-only" aria-label="Prototype controls">
+	<span>Prototype</span>
+	<button type="button" data-action="reset-demo">Reset</button>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
