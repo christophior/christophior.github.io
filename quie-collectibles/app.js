@@ -299,7 +299,7 @@
 				</div>
 				${col('Shop', `${Object.keys(LANGS).map((k) => `<a href="#/shop/${k}">${LANGS[k].name}</a>`).join('')}<a href="#/shop/new">New this week</a><a href="#/shop/collectibles">Comics &amp; collectibles</a><a href="#/shop/supplies">Supplies</a>`)}
 				${col('Help', soon('Shipping & delivery') + soon('Damage claims & returns') + soon('International cards FAQ') + soon('Track an order') + soon('Contact us'))}
-				${col('Quie', soon('About Mario & Quie') + '<a href="#/saved">Saved items</a>' + iconLink('Instagram', IG) + iconLink('TikTok', TT))}
+				${col('Quie', soon('About Mario & Quie') + '<a href="#/saved">Saved items</a><a href="#/growth-playbook">Growth playbook</a>' + iconLink('Instagram', IG) + iconLink('TikTok', TT))}
 			</div>
 			<div class="wrap foot-base">
 				<div class="foot-legal"><span>© 2026 Quie Collectibles · Plano, TX</span>${soon('Privacy')}${soon('Terms')}${soon('Refund policy')}<button class="foot-reset" type="button" data-action="reset-demo">Reset prototype</button></div>
@@ -706,6 +706,30 @@
 		$('#shipbar > div').style.width = pct + '%';
 	}
 
+	// ---------- growth playbook ----------
+	function renderPlaybook() {
+		const pb = window.QUIE_PLAYBOOK;
+		$('#app').innerHTML = `<div class="pb">${pb.html}</div>`;
+		$('#pbToc').innerHTML = `<span class="colhead">Contents</span>` + pb.sections.map(([id, n, label]) =>
+			`<button type="button" data-action="pb-jump" data-target="${id}"><span class="mono">${n}</span>${label}</button>`).join('');
+		document.title = 'Growth playbook · Quie Collectibles';
+		if ('IntersectionObserver' in window) {
+			const btns = $$('#pbToc button');
+			const io = new IntersectionObserver((entries) => {
+				entries.forEach((e) => {
+					if (!e.isIntersecting) return;
+					const id = e.target.id.replace('pb-', '');
+					btns.forEach((b) => (b.dataset.target === id ? b.setAttribute('aria-current', 'true') : b.removeAttribute('aria-current')));
+					// On mobile the menu is a horizontal strip; keep the active pill in view.
+					const toc = $('#pbToc'), on = toc.querySelector('[aria-current]');
+					if (on && toc.scrollWidth > toc.clientWidth) toc.scrollTo({ left: on.offsetLeft - 16, behavior: 'smooth' });
+				});
+			}, { rootMargin: '-20% 0px -70% 0px' });
+			$$('.pb-sec').forEach((s) => io.observe(s));
+			cleanup.push(() => io.disconnect());
+		}
+	}
+
 	// ---------- cart ----------
 	function renderCart() {
 		const n = cartCount(), sub = subtotal(), rem = Math.max(0, FREE_SHIP - sub);
@@ -923,6 +947,7 @@
 		if (parts[0] === 'search') return { name: 'collection', base: 'search', query };
 		if (parts[0] === 'saved') return { name: 'collection', base: 'saved', query };
 		if (parts[0] === 'product') return { name: 'product', id: parts[1] };
+		if (parts[0] === 'growth-playbook') return { name: 'playbook' };
 		return { name: '404' };
 	}
 
@@ -939,6 +964,7 @@
 		if (route.name === 'home') { homeLang = 'all'; renderHome(); document.title = 'Quie Collectibles · Redesign prototype'; }
 		else if (route.name === 'collection') renderCollection();
 		else if (route.name === 'product' && byId[route.id]) renderProduct(byId[route.id]);
+		else if (route.name === 'playbook' && window.QUIE_PLAYBOOK) renderPlaybook();
 		else {
 			$('#app').innerHTML = `<section class="wrap" style="padding:80px var(--gutter)"><div class="noresults"><h2>That page isn't in the prototype</h2><p>Head back to the shop.</p><a class="btn btn--ink" href="#/">Home</a></div></section>`;
 			document.title = 'Not found · Quie Collectibles';
@@ -989,6 +1015,7 @@
 				updateShipbox();
 				break;
 			}
+			case 'pb-jump': { const s = document.getElementById('pb-' + t.dataset.target); if (s) s.scrollIntoView({ behavior: 'smooth', block: 'start' }); break; }
 			case 'gal': showImage(gIndex + Number(t.dataset.dir)); break;
 			case 'thumb': showImage(Number(t.dataset.i)); break;
 			case 'home-lang': homeLang = t.dataset.lang; keepFocus(renderHomeNew); break;
