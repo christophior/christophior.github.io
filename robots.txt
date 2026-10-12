@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /founder/
+Disallow: /quie-collectibles/
 Disallow: /christophior-studio.html
 Disallow: /christophior-brand-assets.html
 
